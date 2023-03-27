@@ -2,32 +2,17 @@ import { useEffect, useState } from 'react';
 import { api } from '../lib/axios';
 
 export function PostComment({ comment }) {
-  const [ comments, setComments ] = useState([])
-
-
-  useEffect(() => {
-    const getComments = async () => {
-      const response = await api.get(`https://jsonplaceholder.typicode.com/comments`);
-      setComments(response.data);
-     
-    };
-        getComments();
-  }, []);
 
   
   return (
 
-  
     <div>
-      {comments.map(comment => (
-        <div className={`bg-white m-6 rounded shadow-md`} key={comment.id}>
+        <div className={`bg-white m-2 rounded shadow-md p-4 h-64`} key={comment.id}>
           <h3 className="text-gray-600 text-lg font-bold">{comment.name}</h3>
           <p className="text-gray-600">{comment.body}</p>
         </div>
-      ))}
-  </div>
+   </div>
    
-
   );
 }
 
@@ -37,8 +22,10 @@ export function Comment()  {
     
   
     useEffect(() => { 
+      
+      
       const getCommnetId = async () => {
-        const response = await api.get(`/comments`);
+        const response = await api.get(`https://jsonplaceholder.typicode.com/comments/`);
         setCommentId(response.data);
       };
   
@@ -47,11 +34,10 @@ export function Comment()  {
   
     return (
       <>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 ">
           {commentId.length > 0 ? (
               commentId.map(comment => (
-                <div key={comment.id}> 
-                  
+                <div className="flex justify-center" key={comment.id}>  
                   <PostComment comment={comment} />
                 </div>
               ))
