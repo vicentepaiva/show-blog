@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
 
   return (
     <>
-      <div className={`transition duration-400 ease-in-out transform hover:scale-105 bg-white p-4 mt-4 ml-4 mr-4 rounded shadow-md ${showComments ? 'relative' : ''} h-full `}>
+      <div className={`transition duration-400 ease-in-out transform hover:scale-105 bg-white p-4 rounded shadow-md ${showComments ? 'relative' : ''} h-full `}>
         <h2 className="text-black text-xl font-bold">{post.title}</h2>
         <p className="text-gray-600 pb-1 border-b-2 border-gray-400 m-4">{post.body}</p>
        
@@ -51,7 +51,7 @@ export function PostList()  {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
         {posts.map(post => (
           <div key={post.id}> 
             <Post post={post} />

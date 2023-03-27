@@ -22,7 +22,7 @@ const User = ({ usuario }) => {
         voltar
       </button>
       </div >
-      <div className="transition duration-500 ease-in-out transform hover:scale-105 bg-white p-4 mt-8 ml-4 mr-4 rounded shadow-md h-full">
+      <div className="transition duration-500 ease-in-out transform hover:scale-105 bg-white p-4 mt-8 rounded shadow-md h-full">
         <div className="flex justify-end">
           <img className="rounded-full w-10 h-10 mr-4 bg-red-400" src={avatarImg} alt="user avatar"/>
         </div>
@@ -53,7 +53,7 @@ const User = ({ usuario }) => {
     }, []);
   
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4 gap-4 ">
         {ids.map(usuario => (
             <div key={usuario.id} >
                 <User usuario={usuario} />
