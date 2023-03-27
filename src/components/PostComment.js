@@ -5,7 +5,6 @@ export function PostComment({ comment }) {
   const [ comments, setComments ] = useState([])
 
 
-
   useEffect(() => {
     const getComments = async () => {
       const response = await api.get(`https://jsonplaceholder.typicode.com/comments`);
